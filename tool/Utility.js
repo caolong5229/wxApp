@@ -349,24 +349,6 @@ export default class Utility {
       separ3 + strs
   };
   /*
-   *
-   * 获取中文年月日时分
-   * sepa：分割符
-   *
-   * */
-  static getChineseDateTime(separ3) {
-    let myDate = new Date();
-    let stryear = myDate.getFullYear(); // 获取完整的年份(4位,1970-????)
-    let strMonth = myDate.getMonth() + 1; // 获取当前月份(0-11,0代表1月)
-    let strDate = myDate.getDate(); // 获取当前日(1-31)
-    let strhour = myDate.getHours(); // 获取当前小时数(0-23)
-    let strm = myDate.getMinutes(); // 获取当前分钟数(0-59)
-
-    return stryear + "年" + Utility.leftPad(strMonth, 2) + "月" +
-      Utility.leftPad(strDate, 2) + "日" + Utility.leftPad(strhour, 2) +
-      separ3 + Utility.leftPad(strm, 2);
-  };
-  /*
   *时间戳转换时间y-m-d h:m:s
   */
   static changeTime (param) {
