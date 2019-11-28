@@ -367,6 +367,18 @@ export default class Utility {
       separ3 + Utility.leftPad(strm, 2);
   };
   /*
+  *时间戳转换时间y-m-d h:m:s
+  */
+  static changeTime (param) {
+    let y = param.getFullYear()
+    let m = param.getMonth()+1>10?param.getMonth()+1:'0'+param.getMonth()
+    let d = param.getDate()>10?param.getDate():'0'+param.getDate()
+    let h = param.getHours()>10?param.getHours():'0'+param.getHours()
+    let mi = param.getMinutes()>10?param.getMinutes():'0'+param.getMinutes()
+    let s = param.getSeconds()>10?param.getSeconds():'0'+param.getSeconds()
+    return String(y) + '-' + String(m) + '-' + String(d) + ' ' + String(h) + ':' + String(mi) + ':' + String(s) 
+  };
+  /*
    *
    * 写本地Session文件
    * key：键
