@@ -532,4 +532,26 @@ export default class Utility {
     })
     return result;
   };
+  /*
+  * 前端实现分页数据
+  * num: 页码
+  * pageSize: 条数
+  * data: 所有数据
+  */
+  static pageDataFn(number,pageSize,data ){
+    //处于第几页 number
+    //保存每页数据的数组
+    let pagedata = [];
+    //pageSize 每页条数
+    //设置开始
+    let start = (pageSize * number) - pageSize;
+    // 设置结束长度
+    let end = pageSize * number;
+    end = end > data.length ? data.length : end;
+    for(let i = start; i < end; i++){
+      //所有分页数据 data
+      pagedata.push(data[i]) 
+    }
+    return pagedata ;
+  }  
 }
